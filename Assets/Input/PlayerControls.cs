@@ -94,6 +94,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Input"",
+            ""id"": ""e0a81eb9-5d18-4086-8a9e-041142e6ac4d"",
+            ""actions"": [
+                {
+                    ""name"": ""ZoomOut"",
+                    ""type"": ""Button"",
+                    ""id"": ""bdf03d9a-8a7f-4dc2-8651-d674cc9efc78"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""be2d24cd-5e1f-4234-8ad6-5ad9f502bd86"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ZoomOut"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -101,6 +129,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // Movement
         m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
         m_Movement_Move = m_Movement.FindAction("Move", throwIfNotFound: true);
+        // Input
+        m_Input = asset.FindActionMap("Input", throwIfNotFound: true);
+        m_Input_ZoomOut = m_Input.FindAction("ZoomOut", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -204,8 +235,58 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public MovementActions @Movement => new MovementActions(this);
+
+    // Input
+    private readonly InputActionMap m_Input;
+    private List<IInputActions> m_InputActionsCallbackInterfaces = new List<IInputActions>();
+    private readonly InputAction m_Input_ZoomOut;
+    public struct InputActions
+    {
+        private @PlayerControls m_Wrapper;
+        public InputActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ZoomOut => m_Wrapper.m_Input_ZoomOut;
+        public InputActionMap Get() { return m_Wrapper.m_Input; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InputActions set) { return set.Get(); }
+        public void AddCallbacks(IInputActions instance)
+        {
+            if (instance == null || m_Wrapper.m_InputActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_InputActionsCallbackInterfaces.Add(instance);
+            @ZoomOut.started += instance.OnZoomOut;
+            @ZoomOut.performed += instance.OnZoomOut;
+            @ZoomOut.canceled += instance.OnZoomOut;
+        }
+
+        private void UnregisterCallbacks(IInputActions instance)
+        {
+            @ZoomOut.started -= instance.OnZoomOut;
+            @ZoomOut.performed -= instance.OnZoomOut;
+            @ZoomOut.canceled -= instance.OnZoomOut;
+        }
+
+        public void RemoveCallbacks(IInputActions instance)
+        {
+            if (m_Wrapper.m_InputActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IInputActions instance)
+        {
+            foreach (var item in m_Wrapper.m_InputActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_InputActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public InputActions @Input => new InputActions(this);
     public interface IMovementActions
     {
         void OnMove(InputAction.CallbackContext context);
+    }
+    public interface IInputActions
+    {
+        void OnZoomOut(InputAction.CallbackContext context);
     }
 }

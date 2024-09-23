@@ -72,6 +72,34 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Input",
+            "id": "e0a81eb9-5d18-4086-8a9e-041142e6ac4d",
+            "actions": [
+                {
+                    "name": "ZoomOut",
+                    "type": "Button",
+                    "id": "bdf03d9a-8a7f-4dc2-8651-d674cc9efc78",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "be2d24cd-5e1f-4234-8ad6-5ad9f502bd86",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ZoomOut",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

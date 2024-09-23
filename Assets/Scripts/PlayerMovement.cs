@@ -36,9 +36,6 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
     }
 
-    /// <summary>
-    /// This function polls the input action map for player input and sets it within the animator.
-    /// </summary>
     private void PlayerInput()
     {
         movementVector = playerControls.Movement.Move.ReadValue<Vector2>();
