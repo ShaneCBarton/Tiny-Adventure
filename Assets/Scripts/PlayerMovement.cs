@@ -1,8 +1,14 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
+    [SerializeField] private GameObject playerBoat;
+
+    [Header("Layer Masks")]
+    [SerializeField] private LayerMask waterLayer;
+    [SerializeField] private LayerMask groundLayer;
 
     private PlayerControls playerControls;
     private Animator animator;
@@ -28,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        PlayerInput();
+        HandlePlayerInput();
     }
 
     private void FixedUpdate()
@@ -36,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
     }
 
-    private void PlayerInput()
+    private void HandlePlayerInput()
     {
         movementVector = playerControls.Movement.Move.ReadValue<Vector2>();
         animator.SetFloat("MoveX", movementVector.x);
@@ -47,5 +53,33 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 position = rb.position + movementVector * (moveSpeed * Time.fixedDeltaTime);
         rb.MovePosition(position);
+    }
+
+    private void EnterWater()
+    {
+        playerBoat.SetActive(true);
+        animator.SetBool("InBoat", true);
+    }
+
+    private void ExitWater()
+    {
+        playerBoat.SetActive(false);
+        animator.SetBool("InBoat", false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Water"))
+        {
+            EnterWater();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Water"))
+        {
+            ExitWater();
+        }
     }
 }
