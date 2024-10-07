@@ -1,26 +1,30 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EncounterManager : MonoBehaviour
+public class EncounterManager : Singleton<EncounterManager>
 {
     public float encounterRate;
     public float safetyPeriod;
     private float lastEncounterTime = 0f;
+    private bool inEncounter = false;
 
-    void Update()
+    private void Update()
     {
-        if (Time.time - lastEncounterTime > safetyPeriod)
+        if (!inEncounter)
         {
-            if (IsPlayerOnWater() && Random.value < encounterRate)
+            if (Time.time - lastEncounterTime > safetyPeriod)
             {
-                StartEncounter();
+                if (IsPlayerOnWater() && Random.value < encounterRate)
+                {
+                    StartEncounter();
+                }
             }
         }
     }
 
-    bool IsPlayerOnWater()
+    private bool IsPlayerOnWater()
     {
-        Vector3 playerPosition = transform.position;
+        Vector3 playerPosition = FindObjectOfType<PlayerMovement>().CurrentPosition;
         Collider2D collider = Physics2D.OverlapPoint(playerPosition);
         if (collider != null && collider.gameObject.CompareTag("Water"))
         {
@@ -29,9 +33,16 @@ public class EncounterManager : MonoBehaviour
         return false;
     }
 
-    void StartEncounter()
+    private void StartEncounter()
     {
-        lastEncounterTime = Time.time;
+        inEncounter = true;
+        GameManager.Instance.UpdatePlayerPosition(FindObjectOfType<PlayerMovement>().CurrentPosition);
         SceneManager.LoadScene("BattleScene");
+    }
+
+    public void EndEncounter()
+    {
+        inEncounter = false;
+        lastEncounterTime = Time.time;
     }
 }

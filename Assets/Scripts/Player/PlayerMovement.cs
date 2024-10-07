@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public class PlayerMovement : Singleton<PlayerMovement>
+public class PlayerMovement : MonoBehaviour
 {
+    public Vector3 CurrentPosition {  get; private set; }
     [SerializeField] private float moveSpeed;
     [SerializeField] private GameObject playerBoat;
 
@@ -16,8 +17,6 @@ public class PlayerMovement : Singleton<PlayerMovement>
 
     private void Awake()
     {
-        base.Awake();
-
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         playerControls = new PlayerControls();
@@ -34,6 +33,10 @@ public class PlayerMovement : Singleton<PlayerMovement>
         {
             playerControls.Disable();
         }
+    }
+    private void Start()
+    {
+        transform.position = GameManager.Instance.PlayerPosition;
     }
 
     private void Update()
@@ -57,6 +60,7 @@ public class PlayerMovement : Singleton<PlayerMovement>
     {
         Vector2 position = rb.position + movementVector * (moveSpeed * Time.fixedDeltaTime);
         rb.MovePosition(position);
+        CurrentPosition = position;
     }
 
     private void EnterWater()
