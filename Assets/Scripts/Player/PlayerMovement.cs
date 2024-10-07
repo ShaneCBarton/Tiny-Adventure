@@ -1,7 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : Singleton<PlayerMovement>
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private GameObject playerBoat;
@@ -17,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        base.Awake();
+
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         playerControls = new PlayerControls();
@@ -29,7 +30,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDisable()
     {
-        playerControls.Disable();
+        if (playerControls != null)
+        {
+            playerControls.Disable();
+        }
     }
 
     private void Update()
