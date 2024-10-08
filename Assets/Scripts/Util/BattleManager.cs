@@ -2,13 +2,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using TMPro;
 
 public class BattleManager : MonoBehaviour
 {
     [SerializeField] private Character player;
     [SerializeField] private List<GameObject> enemyPrefabs;
     [SerializeField] private Transform enemySpawnPoint;
-    [SerializeField] private Image enemyImage;
 
     private void Start()
     {
@@ -20,7 +20,6 @@ public class BattleManager : MonoBehaviour
     private void InitializePlayer()
     {
         player = new GameObject("Player").AddComponent<Character>();
-        // Add abilities to the player (you can customize these)
         AddAbilityToPlayer("Attack");
         AddAbilityToPlayer("Defend");
         AddAbilityToPlayer("Heal");
@@ -41,10 +40,10 @@ public class BattleManager : MonoBehaviour
             Ability ability = player.Abilities[i];
             Button button = GameObject.Find($"AbilityButton{i + 1}").GetComponent<Button>();
             ability.ButtonRef = button;
-            button.GetComponentInChildren<Text>().text = ability.Name;
+            TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
+            buttonText.text = ability.Name;
 
-            // Set up button click event
-            int index = i; // Capture the index for the lambda
+            int index = i;
             button.onClick.AddListener(() => OnAbilityButtonClicked(index));
         }
     }
@@ -56,9 +55,8 @@ public class BattleManager : MonoBehaviour
 
         if (ability.Name == "Flee")
         {
-            SceneManager.LoadScene("GameScene"); // Replace with your game scene name
+            SceneManager.LoadScene("GameScene");
         }
-        // Implement other ability-specific logic here
     }
 
     private void SpawnRandomEnemy()
@@ -68,13 +66,6 @@ public class BattleManager : MonoBehaviour
             int randomIndex = Random.Range(0, enemyPrefabs.Count);
             GameObject enemyPrefab = enemyPrefabs[randomIndex];
             GameObject spawnedEnemy = Instantiate(enemyPrefab, enemySpawnPoint.position, Quaternion.identity);
-
-            // Update the enemy image in the UI
-            SpriteRenderer enemySprite = spawnedEnemy.GetComponent<SpriteRenderer>();
-            if (enemySprite != null && enemyImage != null)
-            {
-                enemyImage.sprite = enemySprite.sprite;
-            }
         }
         else
         {
