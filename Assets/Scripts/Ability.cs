@@ -1,10 +1,8 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Ability : MonoBehaviour
+public abstract class Ability : MonoBehaviour
 {
     [SerializeField] private string abilityName;
-    private Button abilityButton;
 
     public string Name
     {
@@ -12,14 +10,5 @@ public class Ability : MonoBehaviour
         set { abilityName = value; }
     }
 
-    public Button ButtonRef
-    {
-        get { return abilityButton; }
-        set { abilityButton = value; }
-    }
-
-    public virtual void Use()
-    {
-        Debug.Log($"Used ability: {name}");
-    }
+    public abstract void Use(Character user, Character target);
 }

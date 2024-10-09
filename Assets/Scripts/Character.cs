@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    private List<Ability> characterAbilities = new List<Ability>();
+    [SerializeField] private List<Ability> characterAbilities = new List<Ability>();
 
     public IReadOnlyList<Ability> Abilities
     {

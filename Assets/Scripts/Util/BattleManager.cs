@@ -10,6 +10,8 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private List<GameObject> enemyPrefabs;
     [SerializeField] private Transform enemySpawnPoint;
 
+    private Character enemy;
+
     private void Start()
     {
         InitializePlayer();
@@ -19,18 +21,10 @@ public class BattleManager : MonoBehaviour
 
     private void InitializePlayer()
     {
-        player = new GameObject("Player").AddComponent<Character>();
-        AddAbilityToPlayer("Attack");
-        AddAbilityToPlayer("Defend");
-        AddAbilityToPlayer("Heal");
-        AddAbilityToPlayer("Flee");
-    }
-
-    private void AddAbilityToPlayer(string abilityName)
-    {
-        Ability newAbility = new GameObject(abilityName).AddComponent<Ability>();
-        newAbility.Name = abilityName;
-        player.AddAbility(newAbility);
+        player.AddAbility(gameObject.AddComponent<Hook>());
+        player.AddAbility(gameObject.AddComponent<Bait>());
+        player.AddAbility(gameObject.AddComponent<Pass>());
+        player.AddAbility(gameObject.AddComponent<Flee>());
     }
 
     private void PopulateAbilityButtons()
@@ -39,10 +33,8 @@ public class BattleManager : MonoBehaviour
         {
             Ability ability = player.Abilities[i];
             Button button = GameObject.Find($"AbilityButton{i + 1}").GetComponent<Button>();
-            ability.ButtonRef = button;
             TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
             buttonText.text = ability.Name;
-
             int index = i;
             button.onClick.AddListener(() => OnAbilityButtonClicked(index));
         }
@@ -51,11 +43,15 @@ public class BattleManager : MonoBehaviour
     private void OnAbilityButtonClicked(int index)
     {
         Ability ability = player.Abilities[index];
-        ability.Use();
+        ability.Use(player, enemy);
 
-        if (ability.Name == "Flee")
+        if (ability is Flee)
         {
             SceneManager.LoadScene("GameScene");
+        }
+        else
+        {
+            // Handle enemy turn or other game logic
         }
     }
 
@@ -66,6 +62,10 @@ public class BattleManager : MonoBehaviour
             int randomIndex = Random.Range(0, enemyPrefabs.Count);
             GameObject enemyPrefab = enemyPrefabs[randomIndex];
             GameObject spawnedEnemy = Instantiate(enemyPrefab, enemySpawnPoint.position, Quaternion.identity);
+            enemy = spawnedEnemy.GetComponent<Character>();
+
+            // You can add abilities to the enemy here if needed
+            // enemy.AddAbility(gameObject.AddComponent<SomeEnemyAbility>());
         }
         else
         {
