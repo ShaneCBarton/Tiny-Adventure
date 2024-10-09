@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 507028455}
   - component: {fileID: 507028457}
   - component: {fileID: 507028456}
+  - component: {fileID: 507028458}
   m_Layer: 5
   m_Name: BattleText
   m_TagString: Untagged
@@ -353,7 +354,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -421,6 +422,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507028454}
   m_CullTransparentMesh: 1
+--- !u!114 &507028458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507028454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46a531a775b1e304a977ea56ed80fe7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 507028456}
+  delay: 0.1
 --- !u!1 &558404251
 GameObject:
   m_ObjectHideFlags: 0
