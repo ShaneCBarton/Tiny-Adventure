@@ -6,4 +6,6 @@ public class Flee : Ability
     {
         Debug.Log($"{user.name} attempted to flee");
     }
+
+
 }

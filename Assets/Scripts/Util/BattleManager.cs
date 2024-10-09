@@ -8,6 +8,7 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private Character player;
     [SerializeField] private List<GameObject> enemyPrefabs;
     [SerializeField] private Transform enemySpawnPoint;
+    [SerializeField] private TextMeshProUGUI battleText;
 
     private Character enemy;
 
@@ -32,6 +33,7 @@ public class BattleManager : MonoBehaviour
     private void OnAbilityButtonClicked(Ability ability)
     {
         ability.Use(player, enemy);
+        ability.PrintToText(battleText);
     }
 
     private void SpawnRandomEnemy()

@@ -9,9 +9,4 @@ public class Character : MonoBehaviour
     {
         get { return characterAbilities.AsReadOnly(); }
     }
-
-    public void AddAbility(Ability ability)
-    {
-        characterAbilities.Add(ability);
-    }
 }

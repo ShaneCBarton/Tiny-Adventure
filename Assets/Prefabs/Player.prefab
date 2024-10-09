@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Pass
+  actionText: You passed the turn!
 --- !u!1 &760902508268645727
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Flee
+  actionText: You try to flee!
 --- !u!1 &1743502783069104383
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Bait
+  actionText: You threw some bait!
 --- !u!1 &4936849085881598788
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Hook
+  actionText: You hooked the fish!
 --- !u!1 &8717679572676041746
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,22 +320,6 @@ GameObject:
   - component: {fileID: 4544544274267333334}
   - component: {fileID: 7111448010426840717}
   - component: {fileID: -8123467397209170514}
-  - component: {fileID: 3882570713757580103}
-  - component: {fileID: -6733692054969561303}
-  - component: {fileID: 2984875915597110613}
-  - component: {fileID: 665360683503231815}
-  - component: {fileID: 842585035739932842}
-  - component: {fileID: -4193636986284120041}
-  - component: {fileID: 7400335926874024110}
-  - component: {fileID: 7663352899823452234}
-  - component: {fileID: 1668918274948534273}
-  - component: {fileID: 5929018041479161234}
-  - component: {fileID: -7292816760583942715}
-  - component: {fileID: -386112683123602546}
-  - component: {fileID: 7347791027456604084}
-  - component: {fileID: -5398469745112642431}
-  - component: {fileID: -1254188848020308884}
-  - component: {fileID: 7718266978993820194}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -578,215 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterAbilities:
-  - {fileID: 3882570713757580103}
-  - {fileID: -6733692054969561303}
-  - {fileID: 2984875915597110613}
-  - {fileID: 665360683503231815}
---- !u!114 &3882570713757580103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717679572676041746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62aa02f19c9fd514fb5d608e065613b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: Hook
---- !u!114 &-6733692054969561303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717679572676041746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb440ffc98a228c499ed12e516af1db1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: Bait
---- !u!114 &2984875915597110613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717679572676041746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 475454c140cdd234eb255226b8d76c3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: Pass
---- !u!114 &665360683503231815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717679572676041746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68189e8239e267349a69be574cdcd15d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: Flee
---- !u!114 &842585035739932842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717679572676041746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62aa02f19c9fd514fb5d608e065613b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: 
---- !u!114 &-4193636986284120041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717679572676041746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb440ffc98a228c499ed12e516af1db1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: 
---- !u!114 &7400335926874024110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717679572676041746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 475454c140cdd234eb255226b8d76c3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: 
---- !u!114 &7663352899823452234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717679572676041746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68189e8239e267349a69be574cdcd15d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: 
---- !u!114 &1668918274948534273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717679572676041746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62aa02f19c9fd514fb5d608e065613b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: 
---- !u!114 &5929018041479161234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717679572676041746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb440ffc98a228c499ed12e516af1db1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: 
---- !u!114 &-7292816760583942715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717679572676041746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 475454c140cdd234eb255226b8d76c3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: 
---- !u!114 &-386112683123602546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717679572676041746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68189e8239e267349a69be574cdcd15d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: 
---- !u!114 &7347791027456604084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717679572676041746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62aa02f19c9fd514fb5d608e065613b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: 
---- !u!114 &-5398469745112642431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717679572676041746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb440ffc98a228c499ed12e516af1db1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: 
---- !u!114 &-1254188848020308884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717679572676041746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 475454c140cdd234eb255226b8d76c3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: 
---- !u!114 &7718266978993820194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717679572676041746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68189e8239e267349a69be574cdcd15d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: 
+  - {fileID: 2905183903834832926}
+  - {fileID: 4513338187918952877}
+  - {fileID: 3118720637308868142}
+  - {fileID: 2392926710518975752}
