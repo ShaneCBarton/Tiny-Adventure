@@ -14,17 +14,8 @@ public class BattleManager : MonoBehaviour
 
     private void Start()
     {
-        InitializePlayer();
         PopulateAbilityButtons();
         SpawnRandomEnemy();
-    }
-
-    private void InitializePlayer()
-    {
-        player.AddAbility(gameObject.AddComponent<Hook>());
-        player.AddAbility(gameObject.AddComponent<Bait>());
-        player.AddAbility(gameObject.AddComponent<Pass>());
-        player.AddAbility(gameObject.AddComponent<Flee>());
     }
 
     private void PopulateAbilityButtons()
