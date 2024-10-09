@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using TMPro;
 
@@ -26,24 +25,13 @@ public class BattleManager : MonoBehaviour
             Button button = GameObject.Find($"AbilityButton{i + 1}").GetComponent<Button>();
             TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
             buttonText.text = ability.Name;
-            int index = i;
-            button.onClick.AddListener(() => OnAbilityButtonClicked(index));
+            button.onClick.AddListener(() => OnAbilityButtonClicked(ability));
         }
     }
 
-    private void OnAbilityButtonClicked(int index)
+    private void OnAbilityButtonClicked(Ability ability)
     {
-        Ability ability = player.Abilities[index];
         ability.Use(player, enemy);
-
-        if (ability is Flee)
-        {
-            SceneManager.LoadScene("GameScene");
-        }
-        else
-        {
-            // Handle enemy turn or other game logic
-        }
     }
 
     private void SpawnRandomEnemy()
@@ -54,9 +42,6 @@ public class BattleManager : MonoBehaviour
             GameObject enemyPrefab = enemyPrefabs[randomIndex];
             GameObject spawnedEnemy = Instantiate(enemyPrefab, enemySpawnPoint.position, Quaternion.identity);
             enemy = spawnedEnemy.GetComponent<Character>();
-
-            // You can add abilities to the enemy here if needed
-            // enemy.AddAbility(gameObject.AddComponent<SomeEnemyAbility>());
         }
         else
         {
