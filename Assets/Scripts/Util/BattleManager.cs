@@ -36,6 +36,7 @@ public class BattleManager : MonoBehaviour
         ability.PrintToText(battleText);
     }
 
+
     private void SpawnRandomEnemy()
     {
         if (enemyPrefabs.Count > 0)

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdccc3bf2ceec254caf25d90744944f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 8717679572676041746, guid: 61ed76adec3d0b246acb6054bdb46ade, type: 3}
 --- !u!114 &5823434153921506823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,8 +105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26c0aaac604373469ed864697550c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  enemyPrefabs: []
-  abilityButtonPrefab: {fileID: 0}
-  abilityButtonContainer: {fileID: 0}
-  enemySpawnLocation: {fileID: 0}
+  player: {fileID: -8123467397209170514, guid: 61ed76adec3d0b246acb6054bdb46ade, type: 3}
+  enemyPrefabs:
+  - {fileID: 1192315848857572639, guid: a384bdddea9adb14ab58ae3f1345570d, type: 3}
+  - {fileID: 1192315848857572639, guid: cbbe7ced1d2c2eb43aa3b556958780df, type: 3}
+  enemySpawnPoint: {fileID: 6667848745723889972, guid: 9331e56b9f3d4f84686eeb4991547ef9, type: 3}
+  battleText: {fileID: 6493182567523623360, guid: 841a3dd4e6044454c908fcb7d3b4a690, type: 3}

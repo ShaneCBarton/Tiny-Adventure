@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -37,12 +38,18 @@ public class EncounterManager : Singleton<EncounterManager>
     {
         inEncounter = true;
         GameManager.Instance.UpdatePlayerPosition(FindObjectOfType<PlayerMovement>().CurrentPosition);
-        SceneManager.LoadScene("BattleScene");
+        TransitionScene("BattleScene");
     }
 
     public void EndEncounter()
     {
         inEncounter = false;
         lastEncounterTime = Time.time;
+        TransitionScene("GameScene");
+    }
+
+    private void TransitionScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }

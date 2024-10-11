@@ -92,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Flee
   actionText: You try to flee!
+  encounterManager: {fileID: 5823434153921506823, guid: 3a8067790e2d74b469e16055f73ce430, type: 3}
 --- !u!1 &1743502783069104383
 GameObject:
   m_ObjectHideFlags: 0
