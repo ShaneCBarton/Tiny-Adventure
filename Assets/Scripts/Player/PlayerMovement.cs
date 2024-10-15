@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Vector3 CurrentPosition {  get; private set; }
+    public Vector3 CurrentPosition { get; private set; }
     [SerializeField] private float moveSpeed;
     [SerializeField] private GameObject playerBoat;
 
@@ -22,6 +22,11 @@ public class PlayerMovement : MonoBehaviour
         playerControls = new PlayerControls();
     }
 
+    private void Start()
+    {
+        transform.position = GameManager.Instance.PlayerPosition;
+    }
+
     private void OnEnable()
     {
         playerControls.Enable();
@@ -33,10 +38,6 @@ public class PlayerMovement : MonoBehaviour
         {
             playerControls.Disable();
         }
-    }
-    private void Start()
-    {
-        transform.position = GameManager.Instance.PlayerPosition;
     }
 
     private void Update()
@@ -60,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 position = rb.position + movementVector * (moveSpeed * Time.fixedDeltaTime);
         rb.MovePosition(position);
-        CurrentPosition = position;
+        CurrentPosition = transform.position;
     }
 
     private void EnterWater()
@@ -91,3 +92,4 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 }
+

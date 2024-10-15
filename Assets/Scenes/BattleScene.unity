@@ -327,6 +327,7 @@ MonoBehaviour:
   - {fileID: 1192315848857572639, guid: cbbe7ced1d2c2eb43aa3b556958780df, type: 3}
   enemySpawnPoint: {fileID: 248493544}
   battleText: {fileID: 507028456}
+  battleEntryText: 'You encountered a wild '
 --- !u!1 &591952509
 GameObject:
   m_ObjectHideFlags: 0
@@ -2500,6 +2501,10 @@ PrefabInstance:
     - target: {fileID: 6297220320604842430, guid: 841a3dd4e6044454c908fcb7d3b4a690, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386468919705273071, guid: 841a3dd4e6044454c908fcb7d3b4a690, type: 3}
+      propertyPath: delay
+      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

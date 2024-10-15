@@ -97,3 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ec15f4a810e8d49a27216eba3c8f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterAbilities: []
+  characterName: Lion Fish

@@ -9,6 +9,7 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private List<GameObject> enemyPrefabs;
     [SerializeField] private Transform enemySpawnPoint;
     [SerializeField] private TextMeshProUGUI battleText;
+    [SerializeField] private string battleEntryText;
 
     private Character enemy;
 
@@ -16,6 +17,7 @@ public class BattleManager : MonoBehaviour
     {
         PopulateAbilityButtons();
         SpawnRandomEnemy();
+        battleText.text = battleEntryText + enemy.Name;
     }
 
     private void PopulateAbilityButtons()

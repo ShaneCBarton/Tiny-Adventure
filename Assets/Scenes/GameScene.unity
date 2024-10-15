@@ -1133,6 +1133,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &288591733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8717679572676041746, guid: 61ed76adec3d0b246acb6054bdb46ade, type: 3}
+  m_PrefabInstance: {fileID: 2085129792}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -26273,7 +26278,7 @@ Transform:
   - {fileID: 31853029}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1609216594
+--- !u!1001 &2085129792
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -26439,17 +26444,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6146599798098265973, guid: 3a8067790e2d74b469e16055f73ce430, type: 3}
+    - target: {fileID: 5823434153921506823, guid: 3a8067790e2d74b469e16055f73ce430, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7859085193800600620, guid: 3a8067790e2d74b469e16055f73ce430, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 8717679572676041746, guid: 61ed76adec3d0b246acb6054bdb46ade, type: 3}
+      objectReference: {fileID: 288591733}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 6132451003287126725, guid: 3a8067790e2d74b469e16055f73ce430, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a8067790e2d74b469e16055f73ce430, type: 3}
@@ -26463,4 +26463,4 @@ SceneRoots:
   - {fileID: 2042540477454178648}
   - {fileID: 927129085}
   - {fileID: 7641864500629876360}
-  - {fileID: 1609216594}
+  - {fileID: 2085129792}

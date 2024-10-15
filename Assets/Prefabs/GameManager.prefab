@@ -30,8 +30,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8195919076160823755}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7859085193800600620
@@ -61,53 +60,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   encounterRate: 0.05
   safetyPeriod: 5
---- !u!1 &6132451003287126725
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8195919076160823755}
-  - component: {fileID: 6146599798098265973}
-  m_Layer: 0
-  m_Name: BattleManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8195919076160823755
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6132451003287126725}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5374435559605498142}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6146599798098265973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6132451003287126725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c26c0aaac604373469ed864697550c1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: -8123467397209170514, guid: 61ed76adec3d0b246acb6054bdb46ade, type: 3}
-  enemyPrefabs:
-  - {fileID: 1192315848857572639, guid: a384bdddea9adb14ab58ae3f1345570d, type: 3}
-  - {fileID: 1192315848857572639, guid: cbbe7ced1d2c2eb43aa3b556958780df, type: 3}
-  enemySpawnPoint: {fileID: 6667848745723889972, guid: 9331e56b9f3d4f84686eeb4991547ef9, type: 3}
-  battleText: {fileID: 6493182567523623360, guid: 841a3dd4e6044454c908fcb7d3b4a690, type: 3}
+  stepDistance: 0.05
+  player: {fileID: 8717679572676041746, guid: 61ed76adec3d0b246acb6054bdb46ade, type: 3}
