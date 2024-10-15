@@ -41,6 +41,7 @@ public class BattleManager : MonoBehaviour
         if (isPlayerTurn)
         {
             ability.Use(player, enemy, battleText);
+            CheckBattleEnd();
             EndPlayerTurn();
         }
     }
@@ -76,7 +77,7 @@ public class BattleManager : MonoBehaviour
             Ability randomAbility = enemy.Abilities[Random.Range(0, enemy.Abilities.Count)];
             randomAbility.Use(enemy, player, battleText);
         }
-
+        CheckBattleEnd();
         StartPlayerTurn();
     }
 
@@ -108,6 +109,22 @@ public class BattleManager : MonoBehaviour
             {
                 yield return StartCoroutine(EnemyTurn());
             }
+        }
+    }
+
+    private void CheckBattleEnd()
+    {
+        if (player.Health <= 0)
+        {
+            battleText.text = "You have been defeated!";
+            StopAllCoroutines();
+            EncounterManager.Instance.EndEncounter();
+        }
+        else if (enemy.Health <= 0)
+        {
+            battleText.text = "Enemy defeated!";
+            StopAllCoroutines();
+            EncounterManager.Instance.EndEncounter();
         }
     }
 }
