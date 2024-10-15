@@ -101,6 +101,8 @@ MonoBehaviour:
   characterAbilities:
   - {fileID: 3489845213230598215}
   characterName: Lion Fish
+  characterHealth: 4
+  characterDamage: 0
 --- !u!1 &4851021472399256373
 GameObject:
   m_ObjectHideFlags: 0

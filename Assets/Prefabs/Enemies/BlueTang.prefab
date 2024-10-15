@@ -101,6 +101,8 @@ MonoBehaviour:
   characterAbilities:
   - {fileID: 7086525957892661522}
   characterName: Blue Tang
+  characterHealth: 5
+  characterDamage: 0
 --- !u!1 &1367701372221991614
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,8 +40,7 @@ public class BattleManager : MonoBehaviour
     {
         if (isPlayerTurn)
         {
-            ability.Use(player, enemy);
-            ability.PrintToText(battleText);
+            ability.Use(player, enemy, battleText);
             EndPlayerTurn();
         }
     }
@@ -75,8 +74,7 @@ public class BattleManager : MonoBehaviour
         if (enemy.Abilities.Count > 0)
         {
             Ability randomAbility = enemy.Abilities[Random.Range(0, enemy.Abilities.Count)];
-            randomAbility.Use(enemy, player);
-            randomAbility.PrintToText(battleText);
+            randomAbility.Use(enemy, player, battleText);
         }
 
         StartPlayerTurn();

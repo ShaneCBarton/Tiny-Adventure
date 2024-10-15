@@ -26286,6 +26286,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8123467397209170514, guid: 61ed76adec3d0b246acb6054bdb46ade, type: 3}
+      propertyPath: characterName
+      value: Shane
+      objectReference: {fileID: 0}
+    - target: {fileID: -8123467397209170514, guid: 61ed76adec3d0b246acb6054bdb46ade, type: 3}
+      propertyPath: characterDamage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8123467397209170514, guid: 61ed76adec3d0b246acb6054bdb46ade, type: 3}
+      propertyPath: characterHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4137841615303353586, guid: 61ed76adec3d0b246acb6054bdb46ade, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
