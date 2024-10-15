@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 
@@ -10,14 +11,17 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private Transform enemySpawnPoint;
     [SerializeField] private TextMeshProUGUI battleText;
     [SerializeField] private string battleEntryText;
+    [SerializeField] private float enemyTurnDelay = 1f;
 
     private Character enemy;
+    private bool isPlayerTurn = true;
 
     private void Start()
     {
         PopulateAbilityButtons();
         SpawnRandomEnemy();
         battleText.text = battleEntryText + enemy.Name;
+        StartCoroutine(BattleLoop());
     }
 
     private void PopulateAbilityButtons()
@@ -34,10 +38,13 @@ public class BattleManager : MonoBehaviour
 
     private void OnAbilityButtonClicked(Ability ability)
     {
-        ability.Use(player, enemy);
-        ability.PrintToText(battleText);
+        if (isPlayerTurn)
+        {
+            ability.Use(player, enemy);
+            ability.PrintToText(battleText);
+            EndPlayerTurn();
+        }
     }
-
 
     private void SpawnRandomEnemy()
     {
@@ -51,6 +58,58 @@ public class BattleManager : MonoBehaviour
         else
         {
             Debug.LogError("No enemy prefabs assigned to the BattleManager!");
+        }
+    }
+
+    private void EndPlayerTurn()
+    {
+        isPlayerTurn = false;
+        SetAbilityButtonsInteractable(false);
+        StartCoroutine(EnemyTurn());
+    }
+
+    private IEnumerator EnemyTurn()
+    {
+        yield return new WaitForSeconds(enemyTurnDelay);
+
+        if (enemy.Abilities.Count > 0)
+        {
+            Ability randomAbility = enemy.Abilities[Random.Range(0, enemy.Abilities.Count)];
+            randomAbility.Use(enemy, player);
+            randomAbility.PrintToText(battleText);
+        }
+
+        StartPlayerTurn();
+    }
+
+    private void StartPlayerTurn()
+    {
+        isPlayerTurn = true;
+        SetAbilityButtonsInteractable(true);
+        battleText.text += "\nIt's your turn!";
+    }
+
+    private void SetAbilityButtonsInteractable(bool interactable)
+    {
+        Button[] abilityButtons = GameObject.FindObjectsOfType<Button>();
+        foreach (Button button in abilityButtons)
+        {
+            button.interactable = interactable;
+        }
+    }
+
+    private IEnumerator BattleLoop()
+    {
+        while (true)
+        {
+            if (isPlayerTurn)
+            {
+                yield return new WaitUntil(() => !isPlayerTurn);
+            }
+            else
+            {
+                yield return StartCoroutine(EnemyTurn());
+            }
         }
     }
 }
