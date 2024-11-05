@@ -19,11 +19,8 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    public void UseAbility()
+    public Ability GetRandomAbility()
     {
-        if (abilities.Count > 0)
-        {
-            
-        }
+        return abilities[Random.Range(0, abilities.Count)];
     }
 }

@@ -72,8 +72,8 @@ public class BattleManager : MonoBehaviour
     {
         yield return new WaitForSeconds(enemyTurnDelay);
 
-        EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
-        enemyAI.UseAbility();
+        Ability ability = enemy.GetComponent<EnemyAI>().GetRandomAbility();
+        ability.Use(enemy, player, battleText);
         CheckBattleEnd();
         StartPlayerTurn();
     }
