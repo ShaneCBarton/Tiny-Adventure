@@ -400,8 +400,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: -8123467397209170514, guid: 61ed76adec3d0b246acb6054bdb46ade, type: 3}
   enemyPrefabs:
-  - {fileID: 1192315848857572639, guid: a384bdddea9adb14ab58ae3f1345570d, type: 3}
-  - {fileID: 1192315848857572639, guid: cbbe7ced1d2c2eb43aa3b556958780df, type: 3}
+  - {fileID: 2196974962100078404, guid: f042c2704bea73e48bf5c0bd01ff6af2, type: 3}
+  - {fileID: 2742154811349903846, guid: b91239aa5171ff740ab0535881b687f2, type: 3}
+  - {fileID: 1326868298955428360, guid: ec64730fa1306e54a9f07b15633981df, type: 3}
   enemySpawnPoint: {fileID: 248493544}
   battleText: {fileID: 507028456}
   battleEntryText: 'You encountered a wild '
