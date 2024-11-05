@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
@@ -22,12 +23,33 @@ public class EnemyAI : MonoBehaviour
 
     public Ability GetAbility()
     {
-        if (character.GetHealth() >= .75f * character.GetMaxHealth())
+        if (character.GetHealth() >= .5f * character.GetMaxHealth()) // Health above 50% just attack
         {
             return abilities[1];
-        } else
+        } 
+        else if (character.GetHealth() <= .2f * character.GetMaxHealth()) // Health below 20%
         {
-            return abilities[0];
+            // 5% chance to flee, otherwise super attack
+            if (Random.Range(0f, 1f) <= 0.05f)
+            {
+                return abilities[2];
+            }
+            else
+            {
+                return abilities[3];
+            }
+        } 
+        else
+        {
+            // 10% chance to use pass, otherwise attack
+            if (Random.Range(0f, 1f) <= 0.1f)
+            {
+                return abilities[0];
+            }
+            else
+            {
+                return abilities[1];
+            }
         }
     }
 }

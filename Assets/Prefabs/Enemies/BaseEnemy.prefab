@@ -103,6 +103,7 @@ MonoBehaviour:
   - {fileID: 7086525957892661522}
   - {fileID: 4158414008535369437}
   - {fileID: 3384824186182084906}
+  - {fileID: 2263785660556050070}
   characterName: Base
   characterMaxHealth: 0
   characterDamage: 0
@@ -152,6 +153,7 @@ Transform:
   - {fileID: 5241310737745211016}
   - {fileID: 2484412182815692916}
   - {fileID: 2689605390627435893}
+  - {fileID: 2897703695852076184}
   m_Father: {fileID: 3040618374152043000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1755271138257495103
@@ -246,6 +248,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Pass
   actionText: The Enemy passed the turn!
+--- !u!1 &6970474853794366487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2897703695852076184}
+  - component: {fileID: 2263785660556050070}
+  m_Layer: 0
+  m_Name: PanicThrash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2897703695852076184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6970474853794366487}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8867361482471371532}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2263785660556050070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6970474853794366487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b477d122dfaf9694097bc4d441b216c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: Thrash
+  actionText: Enemy thrashed
 --- !u!1 &7113311663432079119
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1440442884302836949, guid: 4aa0f227a66809145a0c0ac8e101cad3, type: 3}
       propertyPath: characterAbilities.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1440442884302836949, guid: 4aa0f227a66809145a0c0ac8e101cad3, type: 3}
       propertyPath: characterAbilities.Array.data[0]
@@ -44,6 +44,10 @@ PrefabInstance:
       propertyPath: characterAbilities.Array.data[2]
       value: 
       objectReference: {fileID: 1764474402395805139}
+    - target: {fileID: 1440442884302836949, guid: 4aa0f227a66809145a0c0ac8e101cad3, type: 3}
+      propertyPath: characterAbilities.Array.data[3]
+      value: 
+      objectReference: {fileID: 3021764335954952815}
     - target: {fileID: 3040618374152043000, guid: 4aa0f227a66809145a0c0ac8e101cad3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -117,6 +121,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68189e8239e267349a69be574cdcd15d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3021764335954952815 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2263785660556050070, guid: 4aa0f227a66809145a0c0ac8e101cad3, type: 3}
+  m_PrefabInstance: {fileID: 3928796626119490809}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b477d122dfaf9694097bc4d441b216c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6115191646873984491 stripped
