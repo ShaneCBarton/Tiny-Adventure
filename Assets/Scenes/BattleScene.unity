@@ -403,6 +403,7 @@ MonoBehaviour:
   - {fileID: 2196974962100078404, guid: f042c2704bea73e48bf5c0bd01ff6af2, type: 3}
   - {fileID: 2742154811349903846, guid: b91239aa5171ff740ab0535881b687f2, type: 3}
   - {fileID: 1326868298955428360, guid: ec64730fa1306e54a9f07b15633981df, type: 3}
+  - {fileID: 1287647409932155954, guid: 26a57510477a07e49bf01d19d52229b2, type: 3}
   enemySpawnPoint: {fileID: 248493544}
   battleText: {fileID: 507028456}
   battleEntryText: 'You encountered a wild '

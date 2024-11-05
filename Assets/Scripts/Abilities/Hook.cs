@@ -5,7 +5,7 @@ public class Hook : Ability
 {
     public override void Use(Character user, Character target, TextMeshProUGUI text)
     {
-        target.TakeDamage(user.Damage);
-        text.text = $"{user.Name} dealt {user.Damage} damage to {target.Name}!";
+        target.TakeDamage(user.GetDamage());
+        text.text = $"{user.GetName()} dealt {user.GetDamage()} damage to {target.GetName()}!";
     }
 }

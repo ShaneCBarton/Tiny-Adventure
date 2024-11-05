@@ -6,6 +6,7 @@ public class EnemyAI : MonoBehaviour
 {
     private List<Ability> abilities = new List<Ability>();
     [SerializeField] private Transform abilitiesTransform;
+    [SerializeField] private Character character;
 
     private void Start()
     {
@@ -19,8 +20,14 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    public Ability GetRandomAbility()
+    public Ability GetAbility()
     {
-        return abilities[Random.Range(0, abilities.Count)];
+        if (character.GetHealth() >= .75f * character.GetMaxHealth())
+        {
+            return abilities[1];
+        } else
+        {
+            return abilities[0];
+        }
     }
 }

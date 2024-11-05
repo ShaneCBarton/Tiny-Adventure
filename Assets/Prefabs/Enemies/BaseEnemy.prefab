@@ -101,8 +101,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterAbilities:
   - {fileID: 7086525957892661522}
+  - {fileID: 4158414008535369437}
+  - {fileID: 3384824186182084906}
   characterName: Base
-  characterHealth: 0
+  characterMaxHealth: 0
   characterDamage: 0
 --- !u!114 &5796918476743323570
 MonoBehaviour:
@@ -117,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilitiesTransform: {fileID: 8867361482471371532}
+  character: {fileID: 1440442884302836949}
 --- !u!1 &1367701372221991614
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,8 +150,56 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5241310737745211016}
+  - {fileID: 2484412182815692916}
+  - {fileID: 2689605390627435893}
   m_Father: {fileID: 3040618374152043000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1755271138257495103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2484412182815692916}
+  - component: {fileID: 4158414008535369437}
+  m_Layer: 0
+  m_Name: Thrash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2484412182815692916
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755271138257495103}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8867361482471371532}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4158414008535369437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755271138257495103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b477d122dfaf9694097bc4d441b216c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: Thrash
+  actionText: Enemy thrashed
 --- !u!1 &6809979409933362481
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,3 +246,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Pass
   actionText: The Enemy passed the turn!
+--- !u!1 &7113311663432079119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2689605390627435893}
+  - component: {fileID: 3384824186182084906}
+  m_Layer: 0
+  m_Name: Flee
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2689605390627435893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7113311663432079119}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8867361482471371532}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3384824186182084906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7113311663432079119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68189e8239e267349a69be574cdcd15d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: Flee
+  actionText: The enemy fled!

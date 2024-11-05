@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using System.Net;
 
 public class BattleManager : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class BattleManager : MonoBehaviour
     {
         PopulateAbilityButtons();
         SpawnRandomEnemy();
-        battleText.text = battleEntryText + enemy.Name;
+        battleText.text = battleEntryText + enemy.GetName();
         StartCoroutine(BattleLoop());
     }
 
@@ -72,17 +73,13 @@ public class BattleManager : MonoBehaviour
     {
         yield return new WaitForSeconds(enemyTurnDelay);
 
-        Ability ability = enemy.GetComponent<EnemyAI>().GetRandomAbility();
-        ability.Use(enemy, player, battleText);
-        CheckBattleEnd();
-        StartPlayerTurn();
-    }
-
-    private void StartPlayerTurn()
-    {
-        isPlayerTurn = true;
-        SetAbilityButtonsInteractable(true);
-        battleText.text += "\nIt's your turn!";
+        if (!isPlayerTurn)
+        {
+            Ability ability = enemy.GetComponent<EnemyAI>().GetAbility();
+            ability.Use(enemy, player, battleText);
+            CheckBattleEnd();
+            isPlayerTurn = true;
+        }
     }
 
     private void SetAbilityButtonsInteractable(bool interactable)
@@ -100,6 +97,8 @@ public class BattleManager : MonoBehaviour
         {
             if (isPlayerTurn)
             {
+                SetAbilityButtonsInteractable(true);
+                battleText.text += "\nIt's your turn!";
                 yield return new WaitUntil(() => !isPlayerTurn);
             }
             else
@@ -111,13 +110,13 @@ public class BattleManager : MonoBehaviour
 
     private void CheckBattleEnd()
     {
-        if (player.Health <= 0)
+        if (PlayerStats.Instance.GetHealth() <= 0)
         {
             battleText.text = "You have been defeated!";
             StopAllCoroutines();
             EncounterManager.Instance.EndEncounter();
         }
-        else if (enemy.Health <= 0)
+        else if (enemy.GetHealth() <= 0)
         {
             battleText.text = "Enemy defeated!";
             StopAllCoroutines();

@@ -571,5 +571,5 @@ MonoBehaviour:
   - {fileID: 3118720637308868142}
   - {fileID: 2392926710518975752}
   characterName: Shane
-  characterHealth: 10
+  characterMaxHealth: 100
   characterDamage: 3

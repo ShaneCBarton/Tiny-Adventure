@@ -5,12 +5,20 @@ public class Character : MonoBehaviour
 {
     [SerializeField] private List<Ability> characterAbilities = new List<Ability>();
     [SerializeField] private string characterName;
-    [SerializeField] private int characterHealth;
+    [SerializeField] private int characterMaxHealth;
     [SerializeField] private int characterDamage;
 
-    public int Damage { get { return characterDamage; } }
-    public int Health { get { return characterHealth; } }
-    public string Name { get { return characterName; } }
+    private int currentHealth;
+
+    private void Awake()
+    {
+        currentHealth = characterMaxHealth;
+    }
+
+    public int GetDamage() { return characterDamage; }
+    public int GetHealth() { return currentHealth; }
+    public int GetMaxHealth() {  return characterMaxHealth; }
+    public string GetName() { return characterName; }
 
     public IReadOnlyList<Ability> Abilities
     {
@@ -19,6 +27,6 @@ public class Character : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        characterHealth -= damage;
+        currentHealth -= damage;
     }
 }

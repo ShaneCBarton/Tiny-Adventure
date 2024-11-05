@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1192315848857572639, guid: 4aa0f227a66809145a0c0ac8e101cad3, type: 3}
       propertyPath: m_Name
-      value: BaseEnemy Variant
+      value: StingrayVariant
       objectReference: {fileID: 0}
     - target: {fileID: 1440442884302836949, guid: 4aa0f227a66809145a0c0ac8e101cad3, type: 3}
       propertyPath: characterName
@@ -22,6 +22,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1440442884302836949, guid: 4aa0f227a66809145a0c0ac8e101cad3, type: 3}
       propertyPath: characterHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440442884302836949, guid: 4aa0f227a66809145a0c0ac8e101cad3, type: 3}
+      propertyPath: characterMaxHealth
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3040618374152043000, guid: 4aa0f227a66809145a0c0ac8e101cad3, type: 3}
