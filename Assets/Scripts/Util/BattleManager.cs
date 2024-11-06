@@ -34,7 +34,7 @@ public class BattleManager : MonoBehaviour
             Ability ability = player.Abilities[i];
             Button button = GameObject.Find($"AbilityButton{i + 1}").GetComponent<Button>();
             TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
-            buttonText.text = ability.Name;
+            buttonText.text = ability.GetName();
             button.onClick.AddListener(() => OnAbilityButtonClicked(ability));
         }
     }

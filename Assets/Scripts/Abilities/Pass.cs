@@ -5,7 +5,7 @@ public class Pass : Ability
 {
     public override void Use(Character user, Character target, TextMeshProUGUI text)
     {
-        text.text = actionText;
+        text.text = $"{user.GetName()} passed the turn!";
     }
 
 }

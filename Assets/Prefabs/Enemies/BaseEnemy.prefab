@@ -103,7 +103,7 @@ MonoBehaviour:
   - {fileID: 7086525957892661522}
   - {fileID: 4158414008535369437}
   - {fileID: 3384824186182084906}
-  - {fileID: 2263785660556050070}
+  - {fileID: 9031819886159371328}
   characterName: Base
   characterMaxHealth: 0
   characterDamage: 0
@@ -201,7 +201,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Thrash
-  actionText: Enemy thrashed
 --- !u!1 &6809979409933362481
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +246,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Pass
-  actionText: The Enemy passed the turn!
 --- !u!1 &6970474853794366487
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2897703695852076184}
-  - component: {fileID: 2263785660556050070}
+  - component: {fileID: 9031819886159371328}
   m_Layer: 0
   m_Name: PanicThrash
   m_TagString: Untagged
@@ -280,7 +278,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8867361482471371532}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2263785660556050070
+--- !u!114 &9031819886159371328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,11 +287,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6970474853794366487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b477d122dfaf9694097bc4d441b216c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d1d9ec47f2b5f54abfdd2b255b584f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityName: Thrash
-  actionText: Enemy thrashed
+  abilityName: Panic Thrash
 --- !u!1 &7113311663432079119
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,4 +336,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Flee
-  actionText: The enemy fled!

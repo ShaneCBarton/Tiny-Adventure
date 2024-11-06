@@ -41,8 +41,8 @@ public class EnemyAI : MonoBehaviour
         } 
         else
         {
-            // 10% chance to use pass, otherwise attack
-            if (Random.Range(0f, 1f) <= 0.1f)
+            // 5% chance to use pass, otherwise attack
+            if (Random.Range(0f, 1f) <= 0.05f)
             {
                 return abilities[0];
             }
