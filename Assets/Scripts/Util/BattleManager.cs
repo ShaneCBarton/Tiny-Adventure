@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using System.Net;
+using System;
 
 public class BattleManager : MonoBehaviour
 {
@@ -13,6 +13,8 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI battleText;
     [SerializeField] private string battleEntryText;
     [SerializeField] private float enemyTurnDelay = 1f;
+
+    public event EventHandler<int> OnPlayerTurnEnd;
 
     private Character enemy;
     private bool isPlayerTurn = true;
@@ -51,7 +53,7 @@ public class BattleManager : MonoBehaviour
     {
         if (enemyPrefabs.Count > 0)
         {
-            int randomIndex = Random.Range(0, enemyPrefabs.Count);
+            int randomIndex = UnityEngine.Random.Range(0, enemyPrefabs.Count);
             GameObject enemyPrefab = enemyPrefabs[randomIndex];
             GameObject spawnedEnemy = Instantiate(enemyPrefab, enemySpawnPoint.position, Quaternion.identity);
             enemy = spawnedEnemy.GetComponent<Character>();
@@ -66,6 +68,7 @@ public class BattleManager : MonoBehaviour
     {
         isPlayerTurn = false;
         SetAbilityButtonsInteractable(false);
+        OnPlayerTurnEnd?.Invoke(this, enemy.GetHealth());
         StartCoroutine(EnemyTurn());
     }
 
@@ -122,5 +125,15 @@ public class BattleManager : MonoBehaviour
             StopAllCoroutines();
             EncounterManager.Instance.EndEncounter();
         }
+    }
+
+    public string GetEnemyName()
+    {
+        return enemy.GetName();
+    }
+
+    public int GetEnemyStartHealth()
+    {
+        return enemy.GetHealth();
     }
 }
