@@ -66,8 +66,8 @@ public class EncounterManager : Singleton<EncounterManager>
         numOfEncounters++;
         inEncounter = false;
         lastEncounterTime = Time.time;
+
         TransitionScene("GameScene");
-        
     }
 
     private void TransitionScene(string sceneName)

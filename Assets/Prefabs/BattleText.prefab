@@ -148,4 +148,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 6493182567523623360}
-  delay: 0.1
+  delay: 0.02
