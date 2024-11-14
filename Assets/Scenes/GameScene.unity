@@ -27067,7 +27067,7 @@ MonoBehaviour:
   itemDescription: {fileID: 144871315}
   itemNameText: {fileID: 480502821}
   itemDescriptionText: {fileID: 2043397125}
-  descriptionDisplayTime: 3
+  descriptionDisplayTime: 5
 --- !u!4 &1629343796
 Transform:
   m_ObjectHideFlags: 0
@@ -27141,7 +27141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: description of what the item does to the player
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -27231,7 +27231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 2043397125}
-  delay: 0.04
+  delay: 0.05
 --- !u!1001 &2085129792
 PrefabInstance:
   m_ObjectHideFlags: 0
