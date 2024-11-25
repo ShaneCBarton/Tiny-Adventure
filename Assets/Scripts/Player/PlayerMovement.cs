@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        transform.position = GameManager.Instance.PlayerPosition;
+        transform.position = PlayerStats.Instance.GetPosition();
     }
 
     private void OnEnable()

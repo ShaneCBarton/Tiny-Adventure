@@ -11,7 +11,7 @@ public class PlayerStats : Singleton<PlayerStats>
 
     private int currentHealth;
     private int currentDamage;
-    private Vector2 playerPosition;
+    private Vector3 playerPosition;
 
     private void Start()
     {
@@ -22,10 +22,9 @@ public class PlayerStats : Singleton<PlayerStats>
     public int GetHealth() { return currentHealth; }
     public int GetDamage() { return currentDamage; }
     public string GetName() { return playerName; }
-    public Vector2 GetPosition() { return playerPosition; }
+    public Vector3 GetPosition() { return playerPosition; }
 
-    public void SetPlayerPosition(Vector2 newPosition) { playerPosition = newPosition; }
-
+    public void SetPlayerPosition(Vector3 newPosition) { playerPosition = newPosition; }
 
     public void SetHealth(int amount)
     {

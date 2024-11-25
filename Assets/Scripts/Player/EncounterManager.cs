@@ -57,7 +57,7 @@ public class EncounterManager : Singleton<EncounterManager>
     private void StartEncounter()
     {
         inEncounter = true;
-        GameManager.Instance.UpdatePlayerPosition(FindObjectOfType<PlayerMovement>().CurrentPosition);
+        PlayerStats.Instance.SetPlayerPosition(FindObjectOfType<PlayerMovement>().CurrentPosition);
         TransitionScene("BattleScene");
     }
 

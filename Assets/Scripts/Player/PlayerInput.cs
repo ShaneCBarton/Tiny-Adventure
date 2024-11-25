@@ -44,6 +44,7 @@ public class PlayerInput : MonoBehaviour
 
     private void ExitGame()
     {
+        PlayerStats.Instance.SetPlayerPosition(FindObjectOfType<Character>().transform.position);
         SaveManager.Instance.SaveGame();
         Application.Quit();
     }

@@ -15,6 +15,11 @@ public class Character : MonoBehaviour
         currentHealth = characterMaxHealth;
     }
 
+    private void Start()
+    {
+        transform.position = PlayerStats.Instance.GetPosition();
+    }
+
     public int GetDamage() { return characterDamage; }
     public int GetHealth() { return currentHealth; }
     public int GetMaxHealth() {  return characterMaxHealth; }

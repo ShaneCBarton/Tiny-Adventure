@@ -17,7 +17,7 @@ public class PlayerSaveData
         health = stats.GetHealth();
         damage = stats.GetDamage();
         playerName = stats.GetName();
-        Vector2 position = stats.GetPosition();
+        Vector3 position = stats.GetPosition();
         positionX = position.x;
         positionY = position.y;
     }
@@ -52,10 +52,9 @@ public class SaveManager : Singleton<SaveManager>
 
             PlayerSaveData saveData = JsonUtility.FromJson<PlayerSaveData>(jsonData);
 
-            PlayerStats playerStats = PlayerStats.Instance;
-            playerStats.SetHealth(saveData.health);
-            Vector2 newPosition = new Vector2(saveData.positionX, saveData.positionY);
-            playerStats.SetPlayerPosition(newPosition);
+            PlayerStats.Instance.SetHealth(saveData.health - PlayerStats.Instance.GetHealth());
+            Vector3 newPosition = new Vector3(saveData.positionX, saveData.positionY, 0);
+            PlayerStats.Instance.SetPlayerPosition(newPosition);
 
             Debug.Log("Game loaded successfully");
         }
