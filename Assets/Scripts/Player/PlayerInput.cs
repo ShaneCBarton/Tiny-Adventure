@@ -16,6 +16,7 @@ public class PlayerInput : MonoBehaviour
     private void Start()
     {
         playerControls.Input.ZoomOut.performed += _ => ZoomOut();
+        playerControls.Input.Exit.performed += _ => ExitGame();
     }
 
     private void OnEnable()
@@ -39,5 +40,11 @@ public class PlayerInput : MonoBehaviour
             Camera.main.orthographicSize = zoomInSize;
             isZoomedIn = true;
         }
+    }
+
+    private void ExitGame()
+    {
+        SaveManager.Instance.SaveGame();
+        Application.Quit();
     }
 }

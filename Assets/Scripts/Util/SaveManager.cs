@@ -1,4 +1,4 @@
-// Data structure to hold player stats
+
 using System.IO;
 using System;
 using UnityEngine;
@@ -28,53 +28,40 @@ public class SaveManager : Singleton<SaveManager>
     private string savePath;
     private const string SAVE_FILE_NAME = "player_save.json";
 
-    private void Start()
+    protected override void Awake()
     {
+        base.Awake();
         savePath = Path.Combine(Application.persistentDataPath, SAVE_FILE_NAME);
     }
 
     public void SaveGame()
-    {
-        try
-        {
-            PlayerSaveData saveData = new PlayerSaveData(PlayerStats.Instance);
+    { 
+        PlayerSaveData saveData = new PlayerSaveData(PlayerStats.Instance);
 
-            string jsonData = JsonUtility.ToJson(saveData, true);
+        string jsonData = JsonUtility.ToJson(saveData, true);
 
-            File.WriteAllText(savePath, jsonData);
-            Debug.Log($"Game saved successfully at {savePath}");
-        }
-        catch (Exception e)
-        {
-            Debug.LogError($"Error saving game: {e.Message}");
-        }
+        File.WriteAllText(savePath, jsonData);
+        Debug.Log($"Game saved successfully at {savePath}");
     }
 
     public void LoadGame()
     {
-        try
+        if (File.Exists(savePath))
         {
-            if (File.Exists(savePath))
-            {
-                string jsonData = File.ReadAllText(savePath);
+            string jsonData = File.ReadAllText(savePath);
 
-                PlayerSaveData saveData = JsonUtility.FromJson<PlayerSaveData>(jsonData);
+            PlayerSaveData saveData = JsonUtility.FromJson<PlayerSaveData>(jsonData);
 
-                PlayerStats playerStats = PlayerStats.Instance;
-                playerStats.SetHealth(saveData.health);
-                Vector2 newPosition = new Vector2(saveData.positionX, saveData.positionY);
-                playerStats.SetPlayerPosition(newPosition);
+            PlayerStats playerStats = PlayerStats.Instance;
+            playerStats.SetHealth(saveData.health);
+            Vector2 newPosition = new Vector2(saveData.positionX, saveData.positionY);
+            playerStats.SetPlayerPosition(newPosition);
 
-                Debug.Log("Game loaded successfully");
-            }
-            else
-            {
-                Debug.Log("No save file found");
-            }
+            Debug.Log("Game loaded successfully");
         }
-        catch (Exception e)
+        else
         {
-            Debug.LogError($"Error loading game: {e.Message}");
+            Debug.Log("No save file found");
         }
     }
 }
