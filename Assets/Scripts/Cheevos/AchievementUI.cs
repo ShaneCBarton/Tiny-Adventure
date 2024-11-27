@@ -7,19 +7,20 @@ public class AchievementUI : MonoBehaviour
     [SerializeField] private GameObject achievementPrefab;
     [SerializeField] private Transform achievementContainer;
 
+
     private void Start()
     {
         PopulateAchievements();
     }
 
-    private void PopulateAchievements()
+    public void PopulateAchievements()
     {
         foreach (Transform child in achievementContainer)
         {
             Destroy(child.gameObject);
         }
 
-        List<Achievement> achievements = AchievementManager.Instance.GetAllAchievements();
+        List<Achievement> achievements = FindObjectOfType<AchievementManager>().GetAllAchievements();
         foreach (Achievement achievement in achievements)
         {
             GameObject achievementObj = Instantiate(achievementPrefab, achievementContainer);

@@ -57,13 +57,13 @@ public class PlayerInput : MonoBehaviour
         if (isPaused)
         {
             Time.timeScale = 1;
-            AchievementManager.Instance.HideScreen();
+            FindObjectOfType<AchievementManager>().HideScreen();
             isPaused = false;
         } 
         else if (!isPaused)
         {
             Time.timeScale = 0;
-            AchievementManager.Instance.ShowScreen();
+            FindObjectOfType<AchievementManager>().ShowScreen();
             isPaused = true;
         }
     }

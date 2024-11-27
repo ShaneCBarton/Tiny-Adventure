@@ -2,15 +2,16 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AchievementManager : Singleton<AchievementManager>
+public class AchievementManager : MonoBehaviour
 {
-    [SerializeField] private List<Achievement> achievements = new List<Achievement>();
-    [SerializeField] private GameObject pauseUI;
     public event Action<Achievement> OnAchievementUnlocked;
 
-    protected override void Awake()
+    [SerializeField] private List<Achievement> achievements = new List<Achievement>();
+    [SerializeField] private GameObject pauseUI;
+    
+
+    private void Awake()
     {
-        base.Awake();
         LoadAchievements();
     }
 
@@ -47,6 +48,11 @@ public class AchievementManager : Singleton<AchievementManager>
 
     public void ShowScreen()
     {
+        if (!IsAchievementUnlocked("CHECK_ACHIEVEMENTS"))
+        {
+            UnlockAchievement("CHECK_ACHIEVEMENTS");
+        }
+        pauseUI.GetComponent<AchievementUI>().PopulateAchievements();
         pauseUI.SetActive(true);
     }
     

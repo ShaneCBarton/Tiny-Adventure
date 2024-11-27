@@ -40,6 +40,10 @@ public class Item : MonoBehaviour
     
     private void PickupItem()
     {
+        if (!FindObjectOfType<AchievementManager>().IsAchievementUnlocked("OPEN_CHEST"))
+        {
+            FindObjectOfType<AchievementManager>().UnlockAchievement("OPEN_CHEST");
+        }
         Inventory.Instance.AddItem(itemData);
     
         uiManager.ShowItemDescription(itemData.itemName, itemData.description);
