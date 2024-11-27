@@ -122,10 +122,7 @@ public class BattleManager : MonoBehaviour
         else if (enemy.GetHealth() <= 0)
         {
             battleText.text = "Enemy defeated!";
-            if (!FindObjectOfType<AchievementManager>().IsAchievementUnlocked("WIN_BATTLE"))
-            {
-                FindObjectOfType<AchievementManager>().UnlockAchievement("WIN_BATTLE");
-            }
+
             StopAllCoroutines();
             EncounterManager.Instance.EndEncounter();
         }

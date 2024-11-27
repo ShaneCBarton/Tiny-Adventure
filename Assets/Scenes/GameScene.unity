@@ -26966,10 +26966,6 @@ MonoBehaviour:
     title: Bragger
     description: Check your current achievements.
     isUnlocked: 0
-  - id: WIN_BATTLE
-    title: Angler
-    description: Defeat your first fish.
-    isUnlocked: 0
   pauseUI: {fileID: 1936906210}
 --- !u!4 &1132631814
 Transform:
