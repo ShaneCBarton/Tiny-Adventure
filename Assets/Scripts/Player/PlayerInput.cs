@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
@@ -7,6 +8,7 @@ public class PlayerInput : MonoBehaviour
 
     private PlayerControls playerControls;
     private bool isZoomedIn = false;
+    private bool isPaused = false;
 
     private void Awake()
     {
@@ -17,7 +19,9 @@ public class PlayerInput : MonoBehaviour
     {
         playerControls.Input.ZoomOut.performed += _ => ZoomOut();
         playerControls.Input.Exit.performed += _ => ExitGame();
+        playerControls.Input.Achievements.performed += _ => AchievementScreen();
     }
+
 
     private void OnEnable()
     {
@@ -47,5 +51,20 @@ public class PlayerInput : MonoBehaviour
         PlayerStats.Instance.SetPlayerPosition(FindObjectOfType<Character>().transform.position);
         SaveManager.Instance.SaveGame();
         Application.Quit();
+    }
+    private void AchievementScreen()
+    {
+        if (isPaused)
+        {
+            Time.timeScale = 1;
+            AchievementManager.Instance.HideScreen();
+            isPaused = false;
+        } 
+        else if (!isPaused)
+        {
+            Time.timeScale = 0;
+            AchievementManager.Instance.ShowScreen();
+            isPaused = true;
+        }
     }
 }

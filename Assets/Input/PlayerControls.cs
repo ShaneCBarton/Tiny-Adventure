@@ -116,6 +116,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Achievements"",
+                    ""type"": ""Button"",
+                    ""id"": ""ae02ba20-4a9b-4f77-9e98-8fdd1bbad975"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -140,6 +149,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Exit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5c3f40b8-ebfc-4886-b437-bd81d78011c9"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Achievements"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -153,6 +173,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Input = asset.FindActionMap("Input", throwIfNotFound: true);
         m_Input_ZoomOut = m_Input.FindAction("ZoomOut", throwIfNotFound: true);
         m_Input_Exit = m_Input.FindAction("Exit", throwIfNotFound: true);
+        m_Input_Achievements = m_Input.FindAction("Achievements", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -262,12 +283,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private List<IInputActions> m_InputActionsCallbackInterfaces = new List<IInputActions>();
     private readonly InputAction m_Input_ZoomOut;
     private readonly InputAction m_Input_Exit;
+    private readonly InputAction m_Input_Achievements;
     public struct InputActions
     {
         private @PlayerControls m_Wrapper;
         public InputActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @ZoomOut => m_Wrapper.m_Input_ZoomOut;
         public InputAction @Exit => m_Wrapper.m_Input_Exit;
+        public InputAction @Achievements => m_Wrapper.m_Input_Achievements;
         public InputActionMap Get() { return m_Wrapper.m_Input; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -283,6 +306,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Exit.started += instance.OnExit;
             @Exit.performed += instance.OnExit;
             @Exit.canceled += instance.OnExit;
+            @Achievements.started += instance.OnAchievements;
+            @Achievements.performed += instance.OnAchievements;
+            @Achievements.canceled += instance.OnAchievements;
         }
 
         private void UnregisterCallbacks(IInputActions instance)
@@ -293,6 +319,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Exit.started -= instance.OnExit;
             @Exit.performed -= instance.OnExit;
             @Exit.canceled -= instance.OnExit;
+            @Achievements.started -= instance.OnAchievements;
+            @Achievements.performed -= instance.OnAchievements;
+            @Achievements.canceled -= instance.OnAchievements;
         }
 
         public void RemoveCallbacks(IInputActions instance)
@@ -318,5 +347,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         void OnZoomOut(InputAction.CallbackContext context);
         void OnExit(InputAction.CallbackContext context);
+        void OnAchievements(InputAction.CallbackContext context);
     }
 }

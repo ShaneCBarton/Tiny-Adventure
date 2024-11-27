@@ -5,6 +5,7 @@ using UnityEngine;
 public class AchievementManager : Singleton<AchievementManager>
 {
     [SerializeField] private List<Achievement> achievements = new List<Achievement>();
+    [SerializeField] private GameObject pauseUI;
     public event Action<Achievement> OnAchievementUnlocked;
 
     protected override void Awake()
@@ -42,6 +43,16 @@ public class AchievementManager : Singleton<AchievementManager>
     {
         Achievement achievement = achievements.Find(a => a.id == achievementId);
         return achievement != null && achievement.isUnlocked;
+    }
+
+    public void ShowScreen()
+    {
+        pauseUI.SetActive(true);
+    }
+    
+    public void HideScreen()
+    {
+        pauseUI.SetActive(false);
     }
 }
 
