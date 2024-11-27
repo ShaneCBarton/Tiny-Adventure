@@ -7,6 +7,7 @@ public class Character : MonoBehaviour
     [SerializeField] private string characterName;
     [SerializeField] private int characterMaxHealth;
     [SerializeField] private int characterDamage;
+    [SerializeField] private bool isPlayer;
 
     private int currentHealth;
 
@@ -17,7 +18,10 @@ public class Character : MonoBehaviour
 
     private void Start()
     {
-        transform.position = PlayerStats.Instance.GetPosition();
+        if (isPlayer)
+        {
+            transform.position = PlayerStats.Instance.GetPosition();
+        }
     }
 
     public int GetDamage() { return characterDamage; }

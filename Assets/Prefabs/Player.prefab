@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Pass
-  actionText: You passed the turn!
 --- !u!1 &760902508268645727
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +90,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Flee
-  actionText: You try to flee!
 --- !u!1 &1743502783069104383
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Bait
-  actionText: You threw some bait!
 --- !u!1 &4936849085881598788
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +299,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Hook
-  actionText: You hooked the fish!
 --- !u!1 &8717679572676041746
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,3 +569,4 @@ MonoBehaviour:
   characterName: Shane
   characterMaxHealth: 100
   characterDamage: 3
+  isPlayer: 1
