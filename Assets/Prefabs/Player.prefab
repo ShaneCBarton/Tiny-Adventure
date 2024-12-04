@@ -316,6 +316,7 @@ GameObject:
   - component: {fileID: 4544544274267333334}
   - component: {fileID: 7111448010426840717}
   - component: {fileID: -8123467397209170514}
+  - component: {fileID: 8359503728001034971}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -433,6 +434,30 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  audioSource: {fileID: 8359503728001034971}
+  landFootsteps:
+  - {fileID: 8300000, guid: 813bc651715153244b8654c912e51680, type: 3}
+  - {fileID: 8300000, guid: 45fef81a62fc40e44b28673f7ad6cca4, type: 3}
+  - {fileID: 8300000, guid: 68ad3f0036056784da003b5c6a9df3ac, type: 3}
+  - {fileID: 8300000, guid: 30c87ef6584d9c940bd6f07b2e79cf62, type: 3}
+  - {fileID: 8300000, guid: 8ade6a5c24760e743b0e33dda9264b56, type: 3}
+  - {fileID: 8300000, guid: 579b47758020f6a42ac62ed3b3cf7938, type: 3}
+  - {fileID: 8300000, guid: 514843e80e173ed4dbb907a2f2265cca, type: 3}
+  - {fileID: 8300000, guid: 6f1702bc5f452a843b65ea2675278e23, type: 3}
+  - {fileID: 8300000, guid: 79857b79b0fb9b541b62cb1f0473c862, type: 3}
+  - {fileID: 8300000, guid: 96389798be11ab14aa4805f5db365ba9, type: 3}
+  waterFootsteps:
+  - {fileID: 8300000, guid: aab67bf140f54e24592fedfd803a8a71, type: 3}
+  - {fileID: 8300000, guid: 4e57d57ac5c50a24bb64c59d3c2a6f4d, type: 3}
+  - {fileID: 8300000, guid: 4bf7481f71f0b70498effcbe5cea59ab, type: 3}
+  - {fileID: 8300000, guid: 02abaa2f9143bb54ca0f5cc6c0a3e74a, type: 3}
+  - {fileID: 8300000, guid: 944d9cbca674d1347a8ce796154b71eb, type: 3}
+  - {fileID: 8300000, guid: 295fbc2c4258ff647a206ad26092782b, type: 3}
+  - {fileID: 8300000, guid: f3b46029aab28544aa5be6ad24da22db, type: 3}
+  - {fileID: 8300000, guid: d2dac3e146f928349ac138c867e315cb, type: 3}
+  - {fileID: 8300000, guid: c70a2396cabbe3a48a98497cb10eb526, type: 3}
+  - {fileID: 8300000, guid: e68327bbc6922724c84b195bd707c6c8, type: 3}
+  footstepInterval: 0.25
 --- !u!50 &2407298964517557887
 Rigidbody2D:
   serializedVersion: 4
@@ -570,3 +595,99 @@ MonoBehaviour:
   characterMaxHealth: 100
   characterDamage: 3
   isPlayer: 1
+--- !u!82 &8359503728001034971
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8717679572676041746}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
