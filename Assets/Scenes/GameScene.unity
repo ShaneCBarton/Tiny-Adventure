@@ -26966,6 +26966,10 @@ MonoBehaviour:
     title: Bragger
     description: Check your current achievements.
     isUnlocked: 0
+  - id: FIRST_KILL
+    title: Killer
+    description: Defeated your first enemy
+    isUnlocked: 0
   pauseUI: {fileID: 1936906210}
 --- !u!4 &1132631814
 Transform:
