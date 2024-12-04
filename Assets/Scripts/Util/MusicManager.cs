@@ -58,5 +58,7 @@ public class MusicManager : Singleton<MusicManager>
             musicSource.volume = fadeVolume;
             yield return null;
         }
+
+        musicSource.volume = currentVolume;
     }
 }

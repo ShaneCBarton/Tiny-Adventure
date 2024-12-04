@@ -18,6 +18,12 @@ public class BattleManager : MonoBehaviour
 
     private Character enemy;
     private bool isPlayerTurn = true;
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -43,6 +49,8 @@ public class BattleManager : MonoBehaviour
     {
         if (isPlayerTurn)
         {
+            AudioClip abilityClip = ability.GetClip();
+            audioSource.PlayOneShot(abilityClip);
             ability.Use(player, enemy, battleText);
             CheckBattleEnd();
             EndPlayerTurn();
@@ -79,6 +87,7 @@ public class BattleManager : MonoBehaviour
         if (!isPlayerTurn)
         {
             Ability ability = enemy.GetComponent<EnemyAI>().GetAbility();
+            ability.PlayAbilitySound();
             ability.Use(enemy, player, battleText);
             CheckBattleEnd();
             isPlayerTurn = true;
