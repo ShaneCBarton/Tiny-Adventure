@@ -7,6 +7,7 @@ public class MusicManager : Singleton<MusicManager>
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioClip menuMusic;
     [SerializeField] private AudioClip gameMusic;
+    [SerializeField] private AudioClip[] battleMusic;
     [SerializeField] private float fadeSpeed = 1f;
     private float currentVolume;
 
@@ -19,7 +20,21 @@ public class MusicManager : Singleton<MusicManager>
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        AudioClip targetClip = scene.buildIndex == 0 ? menuMusic : gameMusic;
+        AudioClip targetClip;
+
+        switch (scene.buildIndex)
+        {
+            case 0:
+                targetClip = menuMusic;
+                break;
+            case 2:
+                targetClip = battleMusic[Random.Range(0, battleMusic.Length)];
+                break;
+            default:
+                targetClip = gameMusic;
+                break;
+        }
+
         StartCoroutine(FadeToNewClip(targetClip));
     }
 
