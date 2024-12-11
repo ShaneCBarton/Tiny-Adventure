@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : Singleton<PlayerStats>
 {
@@ -36,6 +37,7 @@ public class PlayerStats : Singleton<PlayerStats>
             playerPosition = new Vector3(0, 0, 0);
             SaveManager.Instance.SaveGame();
             SaveManager.Instance.LoadGame();
+            SceneManager.LoadScene(1);
         }
     }
 

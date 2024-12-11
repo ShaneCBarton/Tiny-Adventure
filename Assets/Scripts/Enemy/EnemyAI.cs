@@ -21,32 +21,34 @@ public class EnemyAI : MonoBehaviour
 
     public Ability GetAbility()
     {
-        if (character.GetHealth() >= .5f * character.GetMaxHealth()) // Health above 50% just attack
-        {
-            return abilities[1];
-        } 
-        else if (character.GetHealth() <= .2f * character.GetMaxHealth()) // Health below 20%
+        float healthPercent = (float)character.GetHealth() / (float)character.GetMaxHealth();
+
+        if (healthPercent <= .2f) // Check low health FIRST
         {
             // 5% chance to flee, otherwise super attack
             if (Random.Range(0f, 1f) <= 0.05f)
             {
-                return abilities[2];
+                return abilities[2];  // Flee
             }
             else
             {
-                return abilities[3];
+                return abilities[3];  // Super attack
             }
-        } 
-        else
+        }
+        else if (healthPercent >= .5f) // Then check high health
+        {
+            return abilities[1];  // Attack
+        }
+        else // Between 20% and 50%
         {
             // 5% chance to use pass, otherwise attack
             if (Random.Range(0f, 1f) <= 0.05f)
             {
-                return abilities[0];
+                return abilities[0];  // Pass
             }
             else
             {
-                return abilities[1];
+                return abilities[1];  // Attack
             }
         }
     }

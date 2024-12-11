@@ -79471,11 +79471,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8123467397209170514, guid: 61ed76adec3d0b246acb6054bdb46ade, type: 3}
       propertyPath: characterDamage
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8123467397209170514, guid: 61ed76adec3d0b246acb6054bdb46ade, type: 3}
       propertyPath: characterMaxHealth
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2407298964517557887, guid: 61ed76adec3d0b246acb6054bdb46ade, type: 3}
       propertyPath: m_BodyType

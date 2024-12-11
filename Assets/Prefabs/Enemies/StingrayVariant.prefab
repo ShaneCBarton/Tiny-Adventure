@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1440442884302836949, guid: 4aa0f227a66809145a0c0ac8e101cad3, type: 3}
       propertyPath: characterDamage
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1440442884302836949, guid: 4aa0f227a66809145a0c0ac8e101cad3, type: 3}
       propertyPath: characterHealth
@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1440442884302836949, guid: 4aa0f227a66809145a0c0ac8e101cad3, type: 3}
       propertyPath: characterMaxHealth
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3040618374152043000, guid: 4aa0f227a66809145a0c0ac8e101cad3, type: 3}
       propertyPath: m_LocalPosition.x

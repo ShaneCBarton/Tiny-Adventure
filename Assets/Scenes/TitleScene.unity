@@ -11639,7 +11639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a6b0d4a1c7a9d42badbbf400dab5c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 25
+  startHealth: 100
   startDamage: 3
   playerName: Shane
 --- !u!4 &2142247325
