@@ -30,6 +30,17 @@ public class PlayerStats : Singleton<PlayerStats>
     {
         currentHealth += amount;
         OnPlayerHealthChanged?.Invoke(this, EventArgs.Empty);
-        Debug.Log("Current health: " + currentHealth);
+        if (IsPlayerDead())
+        {
+            currentHealth = startHealth;
+            playerPosition = new Vector3(0, 0, 0);
+            SaveManager.Instance.SaveGame();
+            SaveManager.Instance.LoadGame();
+        }
+    }
+
+    private bool IsPlayerDead()
+    {
+        return currentHealth <= 0;
     }
 }
