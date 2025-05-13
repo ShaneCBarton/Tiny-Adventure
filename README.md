@@ -1,2 +1,2 @@
-# GAME3023-Labs
-Repo for GAME3023 lab assignments.
+tiny adventure
+A game made in Unity in 15 weeks.
